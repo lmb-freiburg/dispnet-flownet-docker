@@ -36,7 +36,7 @@ Make sure you have read/write rights for the current folder. Run the `run-networ
 - we assume that we are on a single-GPU system
 - we want debug outputs, but not the whole network stdout
 
-> $ ./dispflownet-dockerfiles/run-network.sh -n DispNetCorr1D -v data/disparity-left-images.txt data/disparity-right-images.txt data/disparity-outputs.txt
+> $ ./run-network.sh -n DispNetCorr1D -v data/disparity-left-images.txt data/disparity-right-images.txt data/disparity-outputs.txt
 
 
 ### 2.2 Optical flow estimation
@@ -44,7 +44,7 @@ Make sure you have read/write rights for the current folder. Run the `run-networ
 - we want to use the second GPU on a multi-GPU system (i.e. the GPU with index "1" as reported by `nvidia-smi`)
 - we want to see the full network stdout printfest
 
-> $ ./dispflownet-dockerfiles/run-network.sh -n FlowNetC -g 1 -vv data/flow-first-images.txt data/flow-second-images.txt data/flow-outputs.txt
+> $ ./run-network.sh -n FlowNetC -g 1 -vv data/flow-first-images.txt data/flow-second-images.txt data/flow-outputs.txt
 
 
 **NOTE:** All the network outputs will be files belonging to "root".  As a regular user, you cannot change these files, but you can copy them to files that belong to you, and then delete the originals:
