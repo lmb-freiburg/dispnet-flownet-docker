@@ -19,7 +19,7 @@ See the [paper website](http://lmb.informatik.uni-freiburg.de/Publications/2016/
 
 ## 0. Requirements
 
-To run the networks, you need an Nvidia GPU with >1GB or memory (at least Kepler).
+To run the networks, you need an Nvidia GPU with >1GB of memory (at least Kepler).
 
 
 ## 1. Building the DN/FN Docker image
