@@ -7,7 +7,7 @@ This repository contains a Dockerfile and scripts to build and run neural networ
 If you use this project or parts of it in your research, please cite the DispNet's original paper:
 
     @InProceedings{dispnet,
-      author    = "N. Mayer and E. Ilg and P. H{\\"a}usser and P. Fischer and D. Cremers and A. Dosovitskiy and T. Brox",
+      author    = "N. Mayer and E. Ilg and P. H{\"a}usser and P. Fischer and D. Cremers and A. Dosovitskiy and T. Brox",
       title     = "A Large Dataset to Train Convolutional Networks for Disparity, Optical Flow, and Scene Flow Estimation",
       booktitle = "IEEE International Conference on Computer Vision and Pattern Recognition (CVPR)",
       year      = "2016",
