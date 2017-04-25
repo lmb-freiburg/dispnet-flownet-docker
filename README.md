@@ -17,6 +17,10 @@ If you use this project or parts of it in your research, please cite the DispNet
 
 See the [paper website](http://lmb.informatik.uni-freiburg.de/Publications/2016/MIFDB16) and the [dataset website](https://lmb.informatik.uni-freiburg.de/resources/datasets/SceneFlowDatasets.en.html) for more details.
 
+## 0. Requirements
+
+To run the networks, you need an Nvidia GPU with >1GB or memory (at least Kepler).
+
 
 ## 1. Building the DN/FN Docker image
 
