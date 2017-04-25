@@ -4,6 +4,8 @@
 
 This repository contains a Dockerfile and scripts to build and run neural networks for disparity and optical flow estimation in Docker containers. We also provide some example data to test the networks. 
 
+![Teaser](data/teaser.png)
+
 If you use this project or parts of it in your research, please cite the DispNet's original paper:
 
     @InProceedings{dispnet,
