@@ -56,5 +56,5 @@ Make sure you have read/write rights for the current folder. Run the `run-networ
 
 
 ## 3. License
-The files in this repository are under the [GNU General Public License v3.0](LICENSE.txt)
+The files in this repository are under the [GNU General Public License v3.0](LICENSE)
 
