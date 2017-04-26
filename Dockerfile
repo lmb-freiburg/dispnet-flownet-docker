@@ -2,7 +2,7 @@
 FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 
 ## Hardcoded driver version, feel free to test another version!
-ENV CUDA_DRIVER_VER="367.57"
+ARG CUDA_DRIVER_VER
 ENV CUDA_DRIVER_RUN="NVIDIA-Linux-x86_64-${CUDA_DRIVER_VER}.run" 
 ENV DISPNET_TAR="dispflownet-release-docker.tar.gz"
 
