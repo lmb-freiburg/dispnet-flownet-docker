@@ -21,6 +21,7 @@ See the [paper website](http://lmb.informatik.uni-freiburg.de/Publications/2016/
 
 ## 0. Requirements
 
+We use [nvidia-docker](https://github.com/NVIDIA/nvidia-docker#quick-start) for reliable GPU support in the containers. This is an extension to Docker and can be easily installed with just two commands.
 To run the networks, you need an Nvidia GPU with >1GB of memory (at least Kepler).
 
 

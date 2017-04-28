@@ -1,9 +1,7 @@
 ## Note: Our Caffe version does not work with CuDNN 6
 FROM nvidia/cuda:8.0-cudnn5-devel-ubuntu16.04
 
-## Hardcoded driver version, feel free to test another version!
-ARG CUDA_DRIVER_VER
-ENV CUDA_DRIVER_RUN="NVIDIA-Linux-x86_64-${CUDA_DRIVER_VER}.run" 
+## The download package
 ENV DISPNET_TAR="dispflownet-release-docker.tar.gz"
 
 ## Put everything in some subfolder
@@ -35,10 +33,6 @@ RUN apt-get update && \
         python-dev \
         python-numpy \
         python-scipy && \
-\
-    wget --progress=bar:force:noscroll http://us.download.nvidia.com/XFree86/Linux-x86_64/${CUDA_DRIVER_VER}/${CUDA_DRIVER_RUN} && \
-    bash $CUDA_DRIVER_RUN -s -N --no-kernel-module && \
-    rm $CUDA_DRIVER_RUN && \
 \
     wget --progress=bar:force:noscroll --no-check-certificate https://lmb.informatik.uni-freiburg.de/data/${DISPNET_TAR} && \
     tar xfz ${DISPNET_TAR} && \

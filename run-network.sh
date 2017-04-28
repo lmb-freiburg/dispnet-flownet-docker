@@ -35,7 +35,7 @@ fun__print_usage () {
   printf "output filenames will be treated as relative to this directory.\n";
   printf "\n";
   printf "The 'gpu' argument is the numeric index of the GPU you want to use.\n";
-  printf "This only makes sense on a multi-GPU system (look it up in nvidia-smi).\n";
+  printf "This only makes sense on a multi-GPU system.\n";
   printf "\n";
   printf "By default, only errors are printed. Single verbosity (-v) prints\n";
   printf "debug outputs, and double verbosity (-vv) also prints whatever the\n";
@@ -137,23 +137,17 @@ fun__debug_printf "Output:          ${OUTPUT}";
 #  - "-w" executes "cd" in the container (each network has a folder)
 ## Note: The ugly conditional only switches stdout on/off.
 if test $VERBOSITY -ge 2; then
-  docker run \
+  nvidia-docker run \
     --rm \
-    --device "/dev/nvidia${GPU_IDX}:/dev/nvidia0" \
-    --device "/dev/nvidiactl:/dev/nvidiactl" \
-    --device "/dev/nvidia-uvm:/dev/nvidia-uvm" \
     --volume "${PWD}:/input-output:rw" \
     --workdir "${WORKDIR}" \
-    -it "$CONTAINER" python demo.py "${FIRST_INPUT}" "${SECOND_INPUT}" "${OUTPUT}";
+    -it "$CONTAINER" python demo.py "${FIRST_INPUT}" "${SECOND_INPUT}" "${OUTPUT}" "${GPU_IDX}";
 else
-  docker run \
+  nvidia-docker run \
     --rm \
-    --device "/dev/nvidia${GPU_IDX}:/dev/nvidia0" \
-    --device "/dev/nvidiactl:/dev/nvidiactl" \
-    --device "/dev/nvidia-uvm:/dev/nvidia-uvm" \
     --volume "${PWD}:/input-output:rw" \
     --workdir "${WORKDIR}" \
-    -it "$CONTAINER" python demo.py "${FIRST_INPUT}" "${SECOND_INPUT}" "${OUTPUT}" \
+    -it "$CONTAINER" python demo.py "${FIRST_INPUT}" "${SECOND_INPUT}" "${OUTPUT}" "${GPU_IDX}" \
     > /dev/null;
 fi
 
